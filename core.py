@@ -13,8 +13,16 @@ def threshold(img: np.ndarray, threshold: int) -> np.ndarray:
     i.e. if `blue < threshold` then value for that pixel in the blue channel would be set to 0.
     *which might not be your desired result*"""
 
-    if len(img.shape[2]) > 2:
+    if len(img.shape) > 2:
         print("Image is not grayscale, each channel value will be thresholded")
     
     return np.where(img > threshold, img, 0)
+
+def threshold_binary(img: np.ndarray, threshold: int) -> np.ndarray:
+    """If pixel value > `threshold` then set pixel value to 255 else 0"""
+
+    if len(img.shape) > 2:
+        print("Image is not grayscale, each channel value will be thresholded")
+    
+    return np.where(img > threshold, 255, 0)
 
