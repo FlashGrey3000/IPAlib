@@ -39,6 +39,7 @@ from core import convolution
 kernel = np.array([[-1,-1,-1],[-1,8,-1],[-1,-1,-1]]) # gaussian kernel
 img = convolution(img, kernel)
 ```
+<div>
 <img src="assets/anne_listenin.jpg" alt="anne listenin" style="width: 40%;" />
 -> 
 <img src="assets/anne_listenin_conv.jpg" alt="anne listenin convolution" style="width: 40%;" />
