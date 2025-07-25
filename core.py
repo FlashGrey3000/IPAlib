@@ -22,7 +22,7 @@ def threshold_binary(img: np.ndarray, threshold: int) -> np.ndarray:
     """If pixel value > `threshold` then set pixel value to 255 else 0"""
 
     if len(img.shape) > 2:
-        print("Image is not grayscale, each channel value will be thresholded.")
+        print("Image is not grayscale, each channel value will be thresholded.\nUse cv2.IMREAD_GRAYSCALE while reading the image.")
     
     return np.where(img > threshold, 255, 0)
 
@@ -42,7 +42,7 @@ def correlate(img: np.ndarray, kernel: np.ndarray) -> np.ndarray:
         is_bgr = True
 
 
-    # find the center, so that we can extract the region of interest around each pixel
+    # find the center, so that we can extract the region of interest around each pixel in the image
     kernel_center = kernel.shape[0] // 2
     result = np.zeros_like(img)
 
